@@ -16,6 +16,10 @@ class BlogPostsController extends Controller
 
    public function store(Request $request)
    {
+    $validated = $request->validate([
+           'title' => 'required|unique:posts|max:255',
+           'body' => 'required',
+       ]);
        $blogPost = BlogPost::create($request->all());
 
        return response()->json($blogPost, 201);
