@@ -1,8 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import {Head, Link} from '@inertiajs/react';
 import PrimaryButton from "@/Components/PrimaryButton.jsx";
 import {useEffect, useState} from "react";
-import {data} from "autoprefixer";
 import moment from 'moment';
 
 
@@ -35,7 +33,6 @@ export default function Dashboard({ auth }) {
 
     const create = (e) => {
         e.preventDefault();
-      (route('password.request'));
     };
 
     return (
