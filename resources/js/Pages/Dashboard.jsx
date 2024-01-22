@@ -3,6 +3,7 @@ import {Head, Link} from '@inertiajs/react';
 import PrimaryButton from "@/Components/PrimaryButton.jsx";
 import {useEffect, useState} from "react";
 import {data} from "autoprefixer";
+import moment from 'moment';
 
 
 export default function Dashboard({ auth }) {
@@ -48,7 +49,7 @@ export default function Dashboard({ auth }) {
 
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div>
-                        <PrimaryButton  onClick={create} >
+                        <PrimaryButton onClick={create} >
                          Create new post
                         </PrimaryButton>
                     </div>
@@ -61,7 +62,7 @@ export default function Dashboard({ auth }) {
                                     <li key={post.id}>
                                         <h2 className="font-bold">{post.title}</h2>
                                         <p>{post.content}</p>
-                                        <p>{post.created_at}</p>
+                                        <p>{moment(post.created_at).calendar()}</p>
                                     </li>
                                     </div>
                                 ))}
